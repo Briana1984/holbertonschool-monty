@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * push - insert node at the stack in LIFO
+ * push - function
+ * description - insert node at the stack in LIFO
  *
  * @stack: the double pinter to struct
  * @line_number: the line read in the file wih sufix '.m'
@@ -10,21 +11,21 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *newNode = malloc(sizeof(stack_t));
+	stack_t *new = malloc(sizeof(stack_t));
 
-	if (newNode == NULL)
+	if (new == NULL)
 	{
 		fprintf(stderr, "L%d: can't malloc\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	newNode->n = atoi(token);
-	newNode->next = *stack;
-	newNode->prev = NULL;
+	new->n = atoi(token);
+	new->next = *stack;
+	new->prev = NULL;
 	if (*stack != NULL)
 	{
-		(*stack)->prev = newNode;
+		(*stack)->prev = new;
 	}
-	*stack = newNode;
+	*stack = new;
 }
 
 /**

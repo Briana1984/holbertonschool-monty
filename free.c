@@ -1,14 +1,15 @@
 #include "monty.h"
 
 /**
- * free_stack - this function freedom the stack
+ * free_stack - function
+ * description - this function freedom the stack
  * @top: the pointer
  * Return: void
  */
 
 void free_stack(stack_t *top)
 {
-	stack_t *current, *temp;
+	stack_t *current, *temporal;
 
 	if (top == NULL)
 		return;
@@ -17,8 +18,8 @@ void free_stack(stack_t *top)
 
 	while (current != NULL)
 	{
-		temp = current->next;
+		temperol = current->next;
 		free(current);
-		current = temp;
+		current = temporal;
 	}
 }

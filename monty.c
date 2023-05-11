@@ -2,14 +2,15 @@
 char *token = NULL;
 
 /**
- * main - entry into interpreter
+ * main - function
+ * description - entry into interpreter
  * @argc: argc counter
  * @argv: arguments
  * Return: 0 on success
  */
 int main(int argc, char **argv)
 {
-	FILE *fptr;
+	FILE *mnty;
 	char *line = NULL;
 	size_t len = 0;
 	stack_t *stack = NULL;
@@ -19,12 +20,12 @@ int main(int argc, char **argv)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE); }
-	fptr = fopen(argv[1], "r");
-	if (fptr == NULL)
+	mnty = fopen(argv[1], "r");
+	if (mnty == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE); }
-	while (getline(&line, &len, fptr) != -1)
+	while (getline(&line, &len, mnty) != -1)
 	{
 		token = strtok(line, " \n\t");
 		if (token == NULL)
@@ -47,5 +48,5 @@ int main(int argc, char **argv)
 		line_number++; }
 	free_stack(stack);
 	free(line);
-	fclose(fptr);
+	fclose(mnty);
 	return (0); }

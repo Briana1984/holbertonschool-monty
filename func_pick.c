@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * pick_func - check the opcode
+ * pick_func - function
+ * description - check the opcode
  *
  * @stack: double pointer
  * @line_number: line read in the file
