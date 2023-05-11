@@ -18,7 +18,7 @@ void free_stack(stack_t *top)
 
 	while (current != NULL)
 	{
-		temperol = current->next;
+		temporal = current->next;
 		free(current);
 		current = temporal;
 	}
